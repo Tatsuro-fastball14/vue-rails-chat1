@@ -65,7 +65,7 @@ module Rack
   #      proxy-core.balancer = "round-robin"
   #      proxy-core.backends = (
   #        "127.0.0.1:8000",
-  #        "127.0.0.1:8001",
+  #        "127.0.0.1:3001",
   #        ...
   #      )
   #
