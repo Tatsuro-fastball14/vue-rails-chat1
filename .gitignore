@@ -1,5 +1,7 @@
 #front
 /front/node_modules/
+bundle/
+
 
 # local env files
 .env.local
