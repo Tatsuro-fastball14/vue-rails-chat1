@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/api/test', to: 'application#test'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  get '/api/test', to: 'application#test' # ここを追加
+  resources :rooms, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
 end

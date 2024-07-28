@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/api/test', to: 'application#test'
+
+  resources :rooms, only: [:index, :create] # この行を追加
 end
