@@ -24,7 +24,7 @@ export default {
   methods: {
     fetchChatRooms() {
       axios
-        .get('http://localhost:8080/rooms')
+        .get('http://localhost:3000/rooms')
         .then(response => {
           this.chatRooms = response.data;
         })

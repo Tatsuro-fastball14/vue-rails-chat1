@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     test() {
-      fetch('http://localhost:8080/api/test')
+      fetch('http://localhost:3000/api/test')
         .then((response) => response.json())
         .then((data) => {
           this.message = data.message

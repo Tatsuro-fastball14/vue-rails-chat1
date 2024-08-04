@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get '/api/test', to: 'application#test'
-
-  resources :rooms, only: [:index, :create] # この行を追加
+  get '/index', to: 'rooms#index' # '/index' で rooms#index にルーティング
+  resources :rooms, only: [:create] # indexアクションは個別に定義したので、resourcesからは除外
 end
