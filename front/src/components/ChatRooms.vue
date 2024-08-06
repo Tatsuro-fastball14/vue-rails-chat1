@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1>VueChat - チャットルーム一覧</h1>
+    <h1>チャットルーム {{ this.roomId }} </h1>
+
     <ul>
-      <li v-for="room in chatRooms" :key="room.id">
-        <router-link :to="`/rooms/${room.id}`">{{ room.name }}</router-link>
+      <li v-for="message in messages" :key="message.id">
+        <strong>{{ message.sender_name }}:</strong> {{ message.content }}
       </li>
     </ul>
   </div>
@@ -13,20 +14,22 @@
 import axios from 'axios';
 
 export default {
+  props: ['roomId'],
   data() {
     return {
-      chatRooms: [],
+      roomName: '',
+      messages: [],
     };
   },
-  mounted() {
-    this.fetchChatRooms();
+  created() {
+    this.fetchMessages();
   },
   methods: {
-    fetchChatRooms() {
+    fetchMessages() {
       axios
-        .get('http://localhost:3000/rooms')
+        .get(`http://localhost:3000/rooms/${this.roomId}/messages`)
         .then(response => {
-          this.chatRooms = response.data;
+          this.messages = response.data;
         })
         .catch(error => {
           console.error(error);
