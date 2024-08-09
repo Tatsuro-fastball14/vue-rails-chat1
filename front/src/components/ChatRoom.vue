@@ -50,8 +50,6 @@ export default {
           console.error(error);
         });
     },
-  },
-  // 以下を追加
     sendMessage() {
       axios
         .post(`http://localhost:3000/rooms/${this.roomId}/messages`, {
@@ -59,11 +57,12 @@ export default {
           sender_name: this.senderName
         })
         .then(() => {
-          this.newMessageContent = ''
+          this.newMessageContent = ''; // メッセージをクリア
+          this.fetchMessages(); // メッセージリストを更新
         })
         .catch((error) => {
-          console.error(error)
-        })
+          console.error(error);
+        });
     }
   }
 };
