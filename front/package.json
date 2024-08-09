@@ -9,6 +9,7 @@
     "dev": "vue-cli-service serve"
   },
   "dependencies": {
+    "actioncable": "^5.2.8-1",
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
