@@ -7,7 +7,7 @@
         <strong>{{ message.sender_name }}:</strong> {{ message.content }}
       </li>
     </ul>
-    <form @submit.prevent="sendMessage">
+     <form @submit.prevent="sendMessage">
       <div>
         <h3>名前</h3>
         <input type="text" v-model="senderName" placeholder="名前を入力" required />
@@ -57,13 +57,13 @@ export default {
           sender_name: this.senderName
         })
         .then(() => {
-          this.newMessageContent = ''; // メッセージをクリア
-          this.fetchMessages(); // メッセージリストを更新
+          this.newMessageContent = ''
         })
         .catch((error) => {
-          console.error(error);
-        });
+          console.error(error)
+        })
     }
   }
-};
+}
+// ...
 </script>
