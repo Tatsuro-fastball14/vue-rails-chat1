@@ -58,7 +58,7 @@ export default {
     },
     fetchMessages() {
       axios
-        .get(`${import.meta.env.VITE_API_URL}/rooms/${this.roomId}/messages`)
+        .get(`${process.env.VUE_APP_API_URL}/rooms/${this.roomId}/messages`)
         .then(response => {
           this.messages = response.data;
         })
@@ -68,7 +68,7 @@ export default {
     },
     sendMessage() {
       axios
-          .post(`${import.meta.env.VITE_API_URL}/rooms/${this.roomId}/messages`, {
+        .post(`${process.env.VUE_APP_API_URL}/rooms/${this.roomId}/messages`, {
           content: this.newMessageContent,
           sender_name: this.senderName
         })
