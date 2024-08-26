@@ -13,41 +13,30 @@
 </template>
 
 <script>
-import axios from 'axios';
-
-export default {
-  data() {
-    return {
-      chatRooms: [],
-      newRoomName: ''
-    };
-  },
-  created() {
-    this.fetchChatRooms();
-  },
+// ...
   methods: {
     fetchChatRooms() {
       axios
-        .get(`${process.env.VUE_APP_API_URL}/rooms`)
+        .get('http://localhost:3000/rooms')
         .then((response) => {
-          this.chatRooms = response.data;
+          this.chatRooms = response.data
         })
         .catch((error) => {
-          console.error('チャットルームの取得に失敗しました:', error);
-        });
+          console.error(error)
+        })
     },
     createRoom() {
       axios
-        .post(`${process.env.VUE_APP_API_URL}/rooms`, {
+        .post('http://localhost:3000/rooms', {
           name: this.newRoomName
         })
         .then((response) => {
-          this.chatRooms.push(response.data);
-          this.newRoomName = '';
+          this.chatRooms.push(response.data)
+          this.newRoomName = ''
         })
         .catch((error) => {
-          console.error('チャットルームの作成に失敗しました:', error);
-        });
+          console.error(error)
+        })
     }
   }
 }
