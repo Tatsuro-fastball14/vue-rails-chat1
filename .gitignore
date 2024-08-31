@@ -1,11 +1,15 @@
-#front
-/front/node_modules/
-bundle/
+#frontend
+/frontend/node_modules/
 
+
+
+bundle/
+/.env
 
 # local env files
 .env.local
 .env.*.local
+frontend/.env
 
 # Log files
 npm-debug.log*
