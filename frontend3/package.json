@@ -1,19 +1,15 @@
 {
-  "name": "vue-rails-chat",
+  "name": "frontend3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 8080",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

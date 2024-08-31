@@ -1,4 +1,4 @@
-# vue-rails-chat
+# frontend3
 
 ## Project setup
 ```
